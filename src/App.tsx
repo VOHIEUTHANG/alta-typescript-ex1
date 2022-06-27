@@ -1,20 +1,16 @@
 import React from "react";
 import "./App.css";
 import Greet from "./components/Greet";
-import Person from "./components/Person";
+import Heading from "./components/Heading";
+import Oscar from "./components/Oscar";
+
 function App() {
-  const personName = {
-    first: "Thang",
-    last: "Vo",
-  };
-  const nameList = Array(3).fill({
-    first: "Thang",
-    last: "Vo",
-  });
   return (
     <div className="App">
-      <Greet name="ThangVo" isLoggedIn={false} messageCount={10} />
-      <Person name={personName} nameList={nameList} />
+      <Oscar>
+        <Heading>Heading content</Heading>
+      </Oscar>
+      <Greet name="Thang Vo" isLoggedIn={!!1} />
     </div>
   );
 }
