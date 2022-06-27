@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
-import Container from "./components/Container";
-import LoggedIn from "./components/LoggedIn";
+import User from "./components/User";
 
 function App() {
   return (
     <div className="App">
-      <LoggedIn />
+      <User />
     </div>
   );
 }
