@@ -1,29 +1,25 @@
 import { useState } from "react";
+import { Z_UNKNOWN } from "zlib";
 type UserType = {
-  name: string;
+  name: {
+    name: string;
+  };
   email: string;
 };
 const User = () => {
-  const [user, setUser] = useState<UserType>();
+  const [user, setUser] = useState<UserType>({} as UserType);
 
   return (
     <div>
       <button
         onClick={() => {
-          setUser({ name: "Thang", email: "thang@gmail.com" });
+          setUser({ name: { name: "Thang" }, email: "thang@gmail.com" });
         }}
       >
         Login
       </button>
-      <button
-        onClick={() => {
-          setUser(undefined);
-        }}
-      >
-        Logout
-      </button>
-      <div>User name is {user?.name}</div>
-      <div>User email is {user?.email}</div>
+      <div>User name is {user?.name?.name}</div>
+      <div>User email is {user.email}</div>
     </div>
   );
 };
