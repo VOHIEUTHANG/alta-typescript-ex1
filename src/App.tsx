@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
-import User from "./components/context/User";
-import { UserProvider } from "./components/context/UserContext";
-import Timer from "./components/Timer";
+import Private from "./components/auth/Private";
+import Profile from "./components/auth/PrivateProfile";
 
 function App() {
   return (
     <div className="App">
-      <Timer />
+      <Private component={Profile} isLoggedIn={false} />
     </div>
   );
 }
