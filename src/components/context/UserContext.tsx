@@ -1,18 +1,20 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 
-export type AuthUser = {
+type UserType = {
   name: string;
   email: string;
 };
-type userContext_type = {
-  user: AuthUser | null;
-  setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>;
+type UserContextType = {
+  user: UserType | null;
+  setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
 };
-export const userContext = createContext<userContext_type>(
-  {} as userContext_type
+export const userContext = createContext<UserContextType>(
+  {} as UserContextType
 );
-export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<AuthUser | null>(null);
+
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<UserType | null>(null);
+
   return (
     <userContext.Provider value={{ user, setUser }}>
       {children}

@@ -1,20 +1,27 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { userContext } from "./UserContext";
-const User = () => {
-  const userContextValue = useContext(userContext);
 
-  const handleLogin = () => {
-    userContextValue.setUser({ name: "Thang", email: "thang@gmail.com" });
-  };
-  const handleLogout = () => {
-    userContextValue.setUser(null);
-  };
+const User = () => {
+  const { user, setUser } = useContext(userContext);
 
   return (
     <div>
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
-      <div>User name is {userContextValue?.user?.name}</div>
+      <button
+        onClick={() => {
+          setUser({ name: "Thang", email: "thang@gmail.com" });
+        }}
+      >
+        Login
+      </button>
+      <button
+        onClick={() => {
+          setUser(null);
+        }}
+      >
+        Logout
+      </button>
+      <div>User name is {user?.name}</div>
+      <div>User email is {user?.email}</div>
     </div>
   );
 };
