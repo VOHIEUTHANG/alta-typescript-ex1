@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import { Box } from "./components/context/Box";
-import { ThemeProvider } from "./components/context/ThemeContext";
+import User from "./components/context/User";
+import { UserProvider } from "./components/context/UserContext";
 import Counter from "./components/state/Couter";
 
 function App() {
   return (
     <div className="App">
-      <ThemeProvider>
-        <Box />
-      </ThemeProvider>
+      <UserProvider>
+        <User />
+      </UserProvider>
     </div>
   );
 }
