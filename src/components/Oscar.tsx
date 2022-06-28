@@ -1,9 +1,17 @@
 import React from "react";
 
-type OscarProps = {
+type OscarProps_reactNode = {
   children: React.ReactNode;
 };
-const Oscar = ({ children }: OscarProps) => {
+type optionalProps = {
+  name?: string;
+};
+type OscarProps_PrimitiveType = {
+  children: string | number | boolean;
+};
+const Oscar = ({
+  children,
+}: (OscarProps_reactNode & optionalProps) | OscarProps_PrimitiveType) => {
   return <div>{children}</div>;
 };
 

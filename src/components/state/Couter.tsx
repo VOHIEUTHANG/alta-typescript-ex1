@@ -1,12 +1,12 @@
 import { useReducer } from "react";
 
-type actionType = "increment" | "decrement" | "reset";
-type stateType = { count: number };
-type actionsType = { type: actionType; payload?: number };
+type action_type = "increment" | "decrement" | "reset";
+type state_type = { count: number };
+type actions_type = { type: action_type; payload?: number };
 
-const initialState: stateType = { count: 0 };
+const initialState: state_type = { count: 0 };
 
-const reducer = (state: stateType, action: actionsType) => {
+const reducer = (state: state_type, action: actions_type) => {
   switch (action.type) {
     case "increment":
       return { count: state.count + (action.payload || 0) };
