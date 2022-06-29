@@ -1,22 +1,22 @@
 import React from "react";
 
 type TextOwnProps<E extends React.ElementType> = {
-  size?: "sm" | "md" | "lg";
-  color?: "primary" | "secondary";
+  color?: string;
+  size?: string;
   children: string | React.ReactNode;
-  as?: E;
+  elementType?: E;
 };
+
 type TextProps<E extends React.ElementType> = TextOwnProps<E> &
   Omit<React.ComponentProps<E>, keyof TextOwnProps<E>>;
-
 const Text = <E extends React.ElementType = "div">({
-  size,
   color,
+  size,
   children,
-  as,
+  elementType,
   ...rest
 }: TextProps<E>) => {
-  const Component = as ?? "div";
+  const Component = elementType ?? "div";
   return (
     <Component {...rest} className={`class-with-${size}-${color}`}>
       {children}
