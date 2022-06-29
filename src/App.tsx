@@ -1,21 +1,15 @@
 import React from "react";
 import "./App.css";
-import List from "./components/generics/List";
-import RandomNumber from "./components/restrict/RandomNumber";
-import Button from "./components/html/Button";
-import Input from "./components/html/Input";
+import Text from "./components/polymorphic/Text";
 function App() {
   return (
     <div className="App">
-      <Button
-        onClick={() => {
-          console.log("clicked");
-        }}
-        variant="primary"
-      >
-        Primary button
-      </Button>
-      <Input type="text">ABC</Input>
+      <Text as="h1" size="md" style={{ textAlign: "center" }} color="primary">
+        Heading
+      </Text>
+      <Text as="label" htmlFor="#heading" size="md" color="primary">
+        Heading
+      </Text>
     </div>
   );
 }
