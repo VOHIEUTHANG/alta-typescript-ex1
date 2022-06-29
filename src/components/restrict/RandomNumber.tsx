@@ -18,7 +18,6 @@ type ZeroNumber = RandomNumberType & {
   isNegative?: never;
   isZero: boolean;
 };
-
 type RandomNumberProps = PositiveNumber | NegativeNumber | ZeroNumber;
 
 const RandomNumber = ({
